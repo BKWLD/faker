@@ -115,5 +115,13 @@ class Fake_Internet extends Fake {
 	public function email($name=false, $domain=false) {
 		return 'test@testy.com';
 	}
+	
+	/**
+	 * Make a random url
+	 */
+	public function url() {
+		$faker = new Faker();
+		return 'http://google.com?q='.urlencode($faker->company->bullshit());
+	}
 
 }
