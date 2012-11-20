@@ -22,21 +22,4 @@ class Fake_Person extends Fake {
 		return $this->lexicalize(explode(' ', self::ProperNames), 2, 2, 'ucfirst');
 	}
 	
-	// Get an avatar image.  If dst is set, download the file to that directory and return
-	// it's absolute path.  Otherwise, just return the remote URL.
-	public function image($dst = null) {
-		
-		// Form the URL
-		$url = 'http://lorempixel.com/1600/1600/people/';
-		if (!$dst) return $url;
-		
-		// Form the new filename
-		if (substr($dst, -1, 1) != '/') $dst .= '/';
-		$dst = $dst.md5(uniqid()).'.jpg';
-		
-		// Save the file to the dst directory
-		if (is_writable(dirname($dst)) && copy($url, $dst)) return $dst;
-		return false;
-	}
-	
 }
