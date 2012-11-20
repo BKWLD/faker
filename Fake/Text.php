@@ -31,15 +31,15 @@ class Fake_Text extends Fake {
 		$paragraph = "";
 		$counter = 0;
 		while($counter < $sentences) {
-			$paragraph .= self::sentence(rand(3,22));
+			$paragraph .= self::sentence(3, rand(4,22));
 			if ($counter != $sentences-1) $paragraph .= " ";
 			$counter++;
 		}
 		return $paragraph;
 	}
 
-	public function sentence($max=false, $min) {
-		return ucfirst($this->words($max, $min)) . '.';
+	public function sentence($min=false, $max=false) {
+		return ucfirst($this->words($min, $max)) . '.';
 	}
 
 	public function words($min=false, $max=false, $filter=false) {
