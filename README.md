@@ -57,8 +57,8 @@ require_once 'Faker.php';
 
 $faker = new Faker();
 
-echo $faker->color->hex;
-echo $faker->person->name;
-echo $faker->address->city;
+echo $faker->color->hex();
+echo $faker->person->name();
+echo $faker->address->city();
 echo $faker->product->price(100, 200);
 ```
