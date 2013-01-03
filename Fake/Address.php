@@ -25,4 +25,11 @@ class Fake_Address extends Fake {
 		return $this->lexicalize(explode(',', $this->cities));
 	}
 	
+	/**
+	 * A US style phone number
+	 */
+	public function phone() {
+		return rand(100,999).'-'.rand(100,999).'-'.rand(1000,9999);
+	}
+	
 }
